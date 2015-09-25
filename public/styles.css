@@ -11,9 +11,18 @@ body{
   margin: 0;
   padding: 0;
   list-style-type: none;
+  position: relative;
+
 }
 
+.cell img{
+  position: absolute;
+  bottom: 0;
+}
 .grid{
   width: 384px;
   height: 384px;
+
 }
+
+
