@@ -2,3 +2,9 @@
 body{
   font-family: monospace;
 }
+
+.cell{
+  background: url(/img/grass.png);
+  width: 48px;
+  height: 48px;
+}
