@@ -1,7 +1,7 @@
 var React = require('react');
 
-var Cell = require('./Cell.jsx');
+var Grid = require('./Grid.jsx');
 
-var cell = React.createElement(Cell, {});
-React.render(cell, document.getElementById('content'));
+var grid = React.createElement(Grid, {});
+React.render(grid, document.getElementById('content'));
 
