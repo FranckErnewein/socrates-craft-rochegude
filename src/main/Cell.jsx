@@ -8,14 +8,9 @@ var transition = {
 module.exports = React.createClass({
 
   render: function() {
-    var stateRendered = null;
-    if (this.state.type === 'wall') {
-      stateRendered = <img src='img/wall.png' />;
-    } else if (this.state.type === 'tower') {
-      stateRendered = <img src='img/tower.png' />;
-    }
+    var image_src = 'img/' + this.state.type + '.png';
     return <li className="cell" onClick={this.handleClick}>
-        {stateRendered}
+        <img src={image_src} />
       </li>;
   },
 
