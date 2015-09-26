@@ -1,8 +1,9 @@
 var React = require('react');
+
 var transition = {
-  grass : "wall",
-  wall:"tower",
-  tower:"grass"
+  grass: "wall",
+  wall: "tower",
+  tower: "grass"
 };
 
 module.exports = React.createClass({
@@ -14,12 +15,16 @@ module.exports = React.createClass({
       </li>;
   },
 
-  handleClick: function () {
-    this.setState({ type : transition[this.state.type] });
+  handleClick: function() {
+    this.setState({
+      type: transition[this.state.type]
+    });
   },
 
 
-  getInitialState: function () {
-    return { type : 'grass' };
+  getInitialState: function() {
+    return {
+      type: 'grass'
+    };
   }
 });
