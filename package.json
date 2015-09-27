@@ -1,7 +1,7 @@
 {
   "name": "rochegude",
   "version": "1.0.0",
-  "description": "",
+  "description": " Rochegude castle with react",
   "main": "src/main.js",
   "scripts": {
     "test": "mocha test/*.js"
@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "babelify": "^6.3.0",
     "lodash": "^3.10.1",
     "react": "^0.13.3",
     "reactify": "^1.1.1"

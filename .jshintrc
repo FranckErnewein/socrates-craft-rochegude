@@ -16,6 +16,7 @@
   "latedef": "nofunc",
   "quotmark": false,
   "freeze": true,
+  "esnext": true,
   "unused": true,
   "globals": {
     /* MOCHA */

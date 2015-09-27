@@ -9,7 +9,7 @@ module.exports = function(grunt) {
   grunt.initConfig({
     browserify: {
       options: {
-        transform: ['reactify'],
+        transform: ['babelify'],
         watch: true,
         browserifyOptions: {
           debug: true,

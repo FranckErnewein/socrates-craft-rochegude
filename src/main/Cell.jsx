@@ -1,38 +1,44 @@
-var React = require('react');
+import React from 'react';
 
-var transition = {
+const transition = {
   grass: "wall",
   wall: "tower",
   tower: "grass"
 };
 
-var towerHeight = {
+const towerHeight = {
   grass: 0,
   wall: 57,
   tower: 130
 };
 
-module.exports = React.createClass({
 
-  render: function() {
-    var style = {
-      height: towerHeight[this.state.type] + 'px'
-    };
-    return <li className="cell" onClick={this.handleClick}>
-        <div className="tower" style={style}></div>
-      </li>;
-  },
+class Cell extends React.Component {
 
-  handleClick: function() {
-    this.setState({
-      type: transition[this.state.type]
-    });
-  },
-
-
-  getInitialState: function() {
-    return {
+  constructor(props) {
+    super(props);
+    this.state = {
       type: 'grass'
     };
   }
-});
+
+  handleClick() {
+    this.setState({
+      type: transition[this.state.type]
+    });
+  }
+
+  render() {
+    let style = {
+      height: towerHeight[this.state.type] + 'px'
+    };
+    return <li className="cell" onClick={this.handleClick.bind(this)}>
+        <div className="tower" style={style}></div>
+      </li>;
+  }
+}
+
+export {
+  Cell as
+  default
+};
