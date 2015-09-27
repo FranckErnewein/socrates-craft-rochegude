@@ -15,9 +15,12 @@ body{
 
 }
 
-.cell img{
+.cell .tower{
   position: absolute;
   bottom: 0;
+  width: 48px;
+  background: url(img/tower.png);
+  transition: 0.2s height;
 }
 .grid{
   width: 384px;

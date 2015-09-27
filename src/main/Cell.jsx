@@ -6,12 +6,20 @@ var transition = {
   tower: "grass"
 };
 
+var towerHeight = {
+  grass: 0,
+  wall: 57,
+  tower: 130
+};
+
 module.exports = React.createClass({
 
   render: function() {
-    var image_src = 'img/' + this.state.type + '.png';
+    var style = {
+      height: towerHeight[this.state.type] + 'px'
+    };
     return <li className="cell" onClick={this.handleClick}>
-        <img src={image_src} />
+        <div className="tower" style={style}></div>
       </li>;
   },
 
