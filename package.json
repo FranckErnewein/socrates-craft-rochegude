@@ -4,7 +4,7 @@
   "description": " Rochegude castle with react",
   "main": "src/main.js",
   "scripts": {
-    "test": "mocha test/*.js"
+    "test": "mocha --compilers js:babel/register test/*.js"
   },
   "author": "",
   "license": "ISC",
@@ -15,8 +15,11 @@
     "reactify": "^1.1.1"
   },
   "devDependencies": {
+    "babel": "^5.8.23",
+    "chai": "^3.3.0",
     "grunt": "^0.4.5",
     "grunt-browserify": "^4.0.1",
-    "grunt-contrib-watch": "^0.6.1"
+    "grunt-contrib-watch": "^0.6.1",
+    "mocha": "^2.3.3"
   }
 }

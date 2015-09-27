@@ -29,7 +29,7 @@ to build and watch for changes
 
 ## Test
 
-install mocha with `npm install -g mocha` then run
+install mocha with `npm install mocha` then run
 
 ```
 npm test
