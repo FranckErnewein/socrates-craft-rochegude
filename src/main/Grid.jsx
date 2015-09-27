@@ -9,8 +9,8 @@ class Grid extends React.Component {
     }
 
     return <ul className="grid">
-       {cells}
-     </ul>;
+      {cells}
+    </ul>;
   }
 }
 

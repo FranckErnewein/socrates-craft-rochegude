@@ -33,8 +33,8 @@ class Cell extends React.Component {
       height: towerHeight[this.state.type] + 'px'
     };
     return <li className="cell" onClick={this.handleClick.bind(this)}>
-        <div className="tower" style={style}></div>
-      </li>;
+      <div className="tower" style={style}></div>
+    </li>;
   }
 }
 
