@@ -1,8 +1,8 @@
-var React = require('react');
-var Cell = require('./Cell.jsx');
+import React from 'react';
+import Cell from './Cell.jsx';
 
-module.exports = React.createClass({
-  render: function() {
+class Grid extends React.Component {
+  render() {
     var cells = [];
     for (var i = 0; i < 64; i++) {
       cells.push(<Cell />);
@@ -12,4 +12,9 @@ module.exports = React.createClass({
        {cells}
      </ul>;
   }
-});
+}
+
+export {
+  Grid as
+  default
+};
