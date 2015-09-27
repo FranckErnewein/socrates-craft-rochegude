@@ -3,11 +3,7 @@ import Cell from './Cell.jsx';
 
 class Grid extends React.Component {
   render() {
-    var cells = [];
-    for (var i = 0; i < 64; i++) {
-      cells.push(<Cell />);
-    }
-
+    let cells = Array.from(new Array(64), () => <Cell />);
     return <ul className="grid">
       {cells}
     </ul>;
