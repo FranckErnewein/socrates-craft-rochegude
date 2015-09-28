@@ -43,7 +43,6 @@ gulp.task('lint', () => {
     .pipe(g.eslint.failOnError());
 });
 
-
 /**
  * Build js file with Babel and Browserify
  */
@@ -71,7 +70,6 @@ gulp.task('serve', ['js'], () => {
 
   gulp.watch(['src/main/*.*', 'public/index.html'], ['js-watch']); //.on('change', browserSync.reload);
 });
-
 
 /**
  * Build JS when source files change and reload browser
