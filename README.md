@@ -4,7 +4,7 @@ Socrates guys craft Rochegude castle with react
 
 ## Install
 
-```
+```shell
 npm install
 ```
 
@@ -12,13 +12,13 @@ npm install
 ## Build
 
 
-```
+```shell
 npm start
 ```
 
 or
 
-```
+```shell
 gulp serve
 ```
 
@@ -27,7 +27,7 @@ to build and watch for changes
 
 ## Test
 
-```
+```shell
 npm test
 ```
 
@@ -35,7 +35,7 @@ or for run all tests when files change :
 
 - Install Gulp with `npm install -g gulp` then run
 
-```
+```shell
 gulp test:auto
 ```
 
@@ -48,3 +48,12 @@ See rules at :
 - https://github.com/yannickcr/eslint-plugin-react
 
 Configuration file : `.eslintrc`
+
+
+## Others
+
+Clean all generated files
+
+```shell
+gulp clean
+```
