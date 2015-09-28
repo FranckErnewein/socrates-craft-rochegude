@@ -4,14 +4,14 @@ export default class Character {
   }
 
   moveLeft(world) {
-    var newPosition = {
+    let newPosition = {
       x: this.position.x - 1,
       y: this.position.y
     };
     return world.checkPosition(newPosition) || 'HasMovedLeft';
   }
   moveRight(world) {
-    var newPosition = {
+    let newPosition = {
       x: this.position.x + 1,
       y: this.position.y
     };
