@@ -37,7 +37,7 @@ gulp.task('test:auto', ['test'], () => {
  * Run ESLint static code analyzer
  */
 gulp.task('lint', () => {
-  return gulp.src(['./src/**/*.js', './src/**/*.jsx', './test/**/*.js'])
+  return gulp.src(['gulpfile.babel.js','./src/**/*.js', './src/**/*.jsx', './test/**/*.js'])
     .pipe(g.eslint())
     .pipe(g.eslint.format())
     .pipe(g.eslint.failOnError());
@@ -53,7 +53,7 @@ gulp.task('js', () => {
       debug: true
     }))
     .pipe(g.rename({
-      basename: "main",
+      basename: 'main'
     }))
     .pipe(gulp.dest('public/js/'));
 });
@@ -64,7 +64,7 @@ gulp.task('js', () => {
 gulp.task('serve', ['js'], () => {
   browserSync.init({
     server: {
-      baseDir: "./public"
+      baseDir: './public'
     }
   });
 
