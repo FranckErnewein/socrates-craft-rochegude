@@ -18,6 +18,8 @@
   "freeze": true,
   "esnext": true,
   "unused": true,
+  "mocha": true,
+  "browser": true,
   "globals": {
     /* MOCHA */
     "describe": false,
