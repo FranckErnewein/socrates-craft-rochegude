@@ -5,7 +5,7 @@ class Grid extends React.Component {
   render() {
     var cells = [];
     for (var i = 0; i < 64; i++) {
-      cells.push(<Cell />);
+      cells.push(<Cell key={'cell-' + i}/>);
     }
 
     return <ul className="grid">
