@@ -1,6 +1,7 @@
 export default class World {
-  constructor() {
-    this.size = 8;
+
+  constructor(size) {
+    this.size = size;
   }
 
   moveLeft() {

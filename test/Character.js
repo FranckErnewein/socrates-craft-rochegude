@@ -11,7 +11,7 @@ describe('Character', () => {
   });
 
   it('should emit has moved left event when move on left', () => {
-    let world = new World();
+    let world = new World(8);
     let character = new Character({
       x: 3,
       y: 3
@@ -26,7 +26,7 @@ describe('Character', () => {
       y: 3
     };
     let character = new Character(position);
-    let world = new World();
+    let world = new World(8);
 
     let event = character.moveLeft(world);
 
@@ -39,7 +39,7 @@ describe('Character', () => {
       y: 0
     };
     let character = new Character(position);
-    let world = new World();
+    let world = new World(8);
 
     let event = character.moveRight(world);
 
