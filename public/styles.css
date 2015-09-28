@@ -1,10 +1,9 @@
-
-body{
+body {
   font-family: monospace;
 }
 
-.cell{
-  background: url(img/grass.png);
+.cell {
+  background: url('img/grass.png');
   width: 48px;
   height: 48px;
   float: left;
@@ -12,20 +11,17 @@ body{
   padding: 0;
   list-style-type: none;
   position: relative;
-
 }
 
-.cell .tower{
+.cell .tower {
   position: absolute;
   bottom: 0;
   width: 48px;
-  background: url(img/tower.png);
+  background: url('img/tower.png');
   transition: 0.2s height;
 }
-.grid{
+
+.grid {
   width: 384px;
   height: 384px;
-
 }
-
-
