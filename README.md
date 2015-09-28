@@ -11,13 +11,10 @@ npm install
 
 ## Build
 
-
 ```shell
 npm start
 ```
-
 or
-
 ```shell
 gulp serve
 ```
@@ -48,6 +45,17 @@ See rules at :
 - https://github.com/yannickcr/eslint-plugin-react
 
 Configuration file : `.eslintrc`
+
+Linting is automaticaly launch when test are runnings.
+
+Manually :
+```shell
+npm run lint
+```
+or
+```shell
+gulp lint
+```
 
 
 ## Others
