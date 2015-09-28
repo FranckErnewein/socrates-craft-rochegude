@@ -6,7 +6,7 @@
   "scripts": {
     "test": "mocha test/*.js",
     "start": "gulp serve",
-    "lint": "eslint . --ext .js --ext .jsx"
+    "lint": "eslint ./src --ext .js --ext .jsx"
   },
   "author": "",
   "license": "ISC",
