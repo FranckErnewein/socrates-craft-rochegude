@@ -33,6 +33,9 @@ gulp.task('test:auto', ['test'], () => {
   gulp.watch(['src/**', 'test/**'], ['test']);
 });
 
+/**
+ * Run ESLint static code analyzer
+ */
 gulp.task('lint', () => {
   return gulp.src(['./src/**/*.js', './src/**/*.jsx', './test/**/*.js'])
     .pipe(g.eslint())
