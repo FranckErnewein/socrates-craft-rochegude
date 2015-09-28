@@ -45,7 +45,7 @@ describe('Character', function() {
     event.should.be.equal('HasMovedOutsideTheWorld');
   });
 
-  //TODO: 
+  //TODO:
   //test move left (HitBuilding),
   //test move right (HasMovedRight, HitBuilding),
   //test move up (HasMoveUp, OutsideTheWorld, HitBuilding),
