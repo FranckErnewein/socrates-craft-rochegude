@@ -3,10 +3,10 @@
 import gulp from 'gulp';
 import gulpLoadPlugins from 'gulp-load-plugins';
 import del from 'del';
-import browserSyncMain from 'browser-sync';
+import browserSyncServer from 'browser-sync';
 
 const g = gulpLoadPlugins();
-const browserSync = browserSyncMain.create();
+const browserSync = browserSyncServer.create();
 
 /**
  * Clean build file
@@ -68,7 +68,7 @@ gulp.task('serve', ['js'], () => {
     }
   });
 
-  gulp.watch(['src/main/*.*', 'public/index.html'], ['js-watch']); //.on('change', browserSync.reload);
+  gulp.watch(['src/main/*.*', 'public/index.html'], ['js-watch']);
 });
 
 /**
