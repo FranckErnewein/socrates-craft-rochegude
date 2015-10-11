@@ -1,9 +1,11 @@
 import chai from 'chai';
 import * as character from '../src/main/actions/character';
+import * as structure from '../src/main/actions/structure';
 import position from '../src/main/state/position';
 import world from '../src/main/state/world';
-chai.should();
 
+chai.should();
+const expect = chai.expect;
 
 describe('action', () => {
   describe('character', () => {
@@ -63,5 +65,48 @@ describe('action', () => {
         event.type.should.be.equal('HasMovedOutsideTheWorld');
       });
     });
+  });
+  describe('structure', function() {
+    it('should build wall', function() {
+      let pos = position(1, 1);
+      let grid = world(2);
+      let event = structure.buildWall(pos, grid);
+      event.type.should.be.equal('WallBuilt');
+      event.world[1][1].should.be.equal('wall');
+    });
+
+    it('should build tower', function() {
+      let pos = position(1, 1);
+      let grid = world(2);
+      let e1 = structure.buildWall(pos, grid);
+      let e2 = structure.buildTower(pos, e1.world);
+      e2.type.should.be.equal('TowerBuilt');
+      e2.world[1][1].should.be.equal('tower');
+    });
+
+    it('should destroy tower', function() {
+      let pos = position(1, 1);
+      let grid = world(2);
+      let e1 = structure.buildWall(pos, grid);
+      let e2 = structure.buildTower(pos, e1.world);
+      let e3 = structure.destroyTower(pos, e2.world);
+      e3.type.should.be.equal('TowerDestroyed');
+      expect(e3.world[1][1]).to.be.equal('grass');
+    });
+
+    it('should build wall, tower, then destroy it', function() {
+      let pos = position(1, 1);
+      let grid = world(2);
+      let e1 = structure.build(pos, grid);
+      e1.type.should.be.equal('WallBuilt');
+      expect(e1.world[1][1]).to.be.equal('wall');
+      let e2 = structure.build(pos, e1.world);
+      e2.type.should.be.equal('TowerBuilt');
+      expect(e2.world[1][1]).to.be.equal('tower');
+      let e3 = structure.build(pos, e2.world);
+      e3.type.should.be.equal('TowerDestroyed');
+      expect(e3.world[1][1]).to.be.equal('grass');
+    });
+
   });
 });

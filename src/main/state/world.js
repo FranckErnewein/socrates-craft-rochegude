@@ -3,7 +3,7 @@ export default function world(size = 8) {
   for (let i = 0; i < size; i++) {
     let line = [];
     for(let j = 0; j < size; j++){
-      line.push(null);
+      line.push('grass');
     }
     matrix.push(line);
   }

@@ -1,7 +1,6 @@
 import position from '../state/position';
 
-export
-function moveUp(pos) {
+export function moveUp(pos) {
   if (pos.y > 0) {
     return {
       type: 'HasMovedUp',
@@ -14,8 +13,7 @@ function moveUp(pos) {
   }
 }
 
-export
-function moveLeft(pos) {
+export function moveLeft(pos) {
   if (pos.x > 0) {
     return {
       type: 'HasMovedLeft',
@@ -43,8 +41,7 @@ function moveDown(pos, world) {
   }
 }
 
-export
-function moveRight(pos, world) {
+export function moveRight(pos, world) {
   let newPosition = position(pos.x + 1, pos.y);
   if (newPosition.x < world.length) {
     return {
