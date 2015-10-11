@@ -27,7 +27,6 @@ describe('Character', () => {
     };
     let character = new Character(position);
     let world = new World(8);
-
     let event = character.moveLeft(world);
 
     event.should.be.equal('HasMovedOutsideTheWorld');
@@ -40,7 +39,6 @@ describe('Character', () => {
     };
     let character = new Character(position);
     let world = new World(8);
-
     let event = character.moveRight(world);
 
     event.should.be.equal('HasMovedOutsideTheWorld');

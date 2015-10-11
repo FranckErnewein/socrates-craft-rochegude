@@ -4,8 +4,8 @@ import Cell from './Cell.jsx';
 class Grid extends React.Component {
 
   render() {
-    var cells = [];
-    for (var i = 0; i < 64; i++) {
+    let cells = [];
+    for (let i = 0; i < 64; i++) {
       cells.push(<Cell key={'cell-' + i}/>);
     }
 

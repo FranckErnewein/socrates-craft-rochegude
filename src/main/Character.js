@@ -1,5 +1,4 @@
 export default class Character {
-
   constructor(position) {
     this.position = position;
   }
@@ -20,5 +19,3 @@ export default class Character {
     return world.checkPosition(newPosition) || 'HasMovedRight';
   }
 }
-
-module.exports = Character;
