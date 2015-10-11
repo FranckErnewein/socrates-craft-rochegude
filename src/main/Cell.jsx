@@ -1,9 +1,9 @@
 import React from 'react';
 
 const transition = {
-  grass: "wall",
-  wall: "tower",
-  tower: "grass"
+  grass: 'wall',
+  wall: 'tower',
+  tower: 'grass'
 };
 
 const towerHeight = {
@@ -22,19 +22,19 @@ class Cell extends React.Component {
     };
   }
 
-  handleClick() {
+  handleClick () {
     this.setState({
       type: transition[this.state.type]
     });
   }
 
-  render() {
+  render () {
     let style = {
       height: towerHeight[this.state.type] + 'px'
     };
-    return <li className="cell" onClick={this.handleClick.bind(this)}>
+    return (<li className="cell" onClick={this.handleClick.bind(this)}>
       <div className="tower" style={style}></div>
-    </li>;
+    </li>);
   }
 }
 

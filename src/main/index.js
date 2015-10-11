@@ -1,7 +1,5 @@
-var React = require('react');
+import React from 'react';
+import Grid from './Grid.jsx';
 
-var Grid = require('./Grid.jsx');
-
-var grid = React.createElement(Grid, {});
+let grid = React.createElement(Grid, {});
 React.render(grid, document.getElementById('content'));
-
