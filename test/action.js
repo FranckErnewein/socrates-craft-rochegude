@@ -12,27 +12,37 @@ describe('action', () => {
     describe('#moveUp', () => {
       it('should move up', function() {
         let pos = position(0, 1);
-        let event = character.moveUp(pos);
+        let event = character.moveUp(pos, world(8));
         event.type.should.be.equal('HasMovedUp');
         event.position.y.should.be.equal(0);
       });
       it('should move outside the world', function() {
         let pos = position(0, 0);
-        let event = character.moveUp(pos);
+        let event = character.moveUp(pos, world(8));
         event.type.should.be.equal('HasMovedOutsideTheWorld');
+      });
+      it('should hit a structure', function() {
+        let builtEvent = structure.buildWall(position(0, 0), world(8));
+        let moveEvent = character.moveUp(position(0, 1), builtEvent.world);
+        moveEvent.type.should.be.equal('StructureHit');
       });
     });
     describe('#moveLeft', () => {
       it('should move left', function() {
         let pos = position(1, 0);
-        let event = character.moveLeft(pos);
+        let event = character.moveLeft(pos, world(8));
         event.type.should.be.equal('HasMovedLeft');
-        event.position.y.should.be.equal(0);
+        event.position.x.should.be.equal(0);
       });
       it('should move outside the world', function() {
         let pos = position(0, 0);
-        let event = character.moveUp(pos);
+        let event = character.moveLeft(pos, world(8));
         event.type.should.be.equal('HasMovedOutsideTheWorld');
+      });
+      it('should hit a structure', function() {
+        let builtEvent = structure.buildWall(position(0, 0), world(8));
+        let moveEvent = character.moveLeft(position(1, 0), builtEvent.world);
+        moveEvent.type.should.be.equal('StructureHit');
       });
     });
     describe('#moveDown', () => {
@@ -49,6 +59,11 @@ describe('action', () => {
         let event = character.moveDown(pos, grid);
         event.type.should.be.equal('HasMovedOutsideTheWorld');
       });
+      it('should hit a structure', function() {
+        let builtEvent = structure.buildWall(position(0, 1), world(8));
+        let moveEvent = character.moveDown(position(0, 0), builtEvent.world);
+        moveEvent.type.should.be.equal('StructureHit');
+      });
     });
     describe('#moveRight', () => {
       it('should move right', function() {
@@ -63,6 +78,11 @@ describe('action', () => {
         let grid = world(8);
         let event = character.moveRight(pos, grid);
         event.type.should.be.equal('HasMovedOutsideTheWorld');
+      });
+      it('should hit a structure', function() {
+        let builtEvent = structure.buildWall(position(1, 0), world(8));
+        let moveEvent = character.moveRight(position(0, 0), builtEvent.world);
+        moveEvent.type.should.be.equal('StructureHit');
       });
     });
   });
